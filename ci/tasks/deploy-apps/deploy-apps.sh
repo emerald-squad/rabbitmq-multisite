@@ -27,7 +27,7 @@ cd src && ./mvnw package && cd ../ && \
   cf push -no-start -p $CONSUMER_APP_BIN -n rabbitmq-multisite-consumer-region-1 consumer && \
   cf set-env consumer CONSUMER_SOURCE region-1 && \
   cf set-env consumer TRANSACTION_DATASOURCE_JDBCURL $TRANSACTION_DATASOURCE_JDBC && \
-  cf set-env consumer SPRING_JPA_PROPERTIES_HIBERNATES_DIALECT org.hibernate.dialect.MariaDBDialect && \
+  cf set-env consumer SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT org.hibernate.dialect.MariaDBDialect && \
   cf bind-service consumer broker && \
   cf bind-service consumer event-store-db && \
   cf start consumer && \
@@ -39,7 +39,7 @@ cd src && ./mvnw package && cd ../ && \
   cf push -no-start -p $CONSUMER_APP_BIN -n rabbitmq-multisite-consumer-region-2 consumer && \
   cf set-env consumer CONSUMER_SOURCE region-2 && \
   cf set-env consumer TRANSACTION_DATASOURCE_JDBCURL $TRANSACTION_DATASOURCE_JDBC && \
-  cf set-env consumer SPRING_JPA_PROPERTIES_HIBERNATES_DIALECT org.hibernate.dialect.MariaDBDialect && \
+  cf set-env consumer SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT org.hibernate.dialect.MariaDBDialect && \
   cf bind-service consumer broker && \
   cf bind-service consumer event-store-db && \
   cf start consumer
